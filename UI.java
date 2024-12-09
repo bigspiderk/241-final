@@ -107,11 +107,16 @@ public class UI {
         Queue<SnakeSegment> snake = new LinkedList<>();
 
         // adds the initial snake body to the board
-        for (int i = 1; i < 4; i++) {
+        for (int i = 1; i < 3; i++) {
             SnakeSegment segment = new SnakeSegment(headPosition-3+i);
             tiles.put(headPosition-3+i, segment);
             snake.add(segment);
         }
+
+        // adding the head
+        SnakeHead head = new SnakeHead(headPosition);
+        snake.add(head);
+        tiles.put(headPosition, head);
 
         drawTiles(tiles);
         return snake;
@@ -218,6 +223,18 @@ class SnakeSegment extends OccupiedTile {
         super(tileNum);
         // Set the background color to Green
         setBackground(Color.GREEN);
+    }
+}
+
+class SnakeHead extends SnakeSegment {
+    public SnakeHead(int tileNum) {
+        super(tileNum);
+        add(new JLabel(("→")));
+    }
+
+    public SnakeHead(int tileNum, String directionArrow) {
+        super(tileNum);
+        add(new JLabel(directionArrow));
     }
 }
 

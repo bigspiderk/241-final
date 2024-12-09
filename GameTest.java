@@ -30,8 +30,29 @@ public class GameTest {
     }
 
     @Test
-    public void checkHeadPosition() {
-        // checks that the position of the head is tile 202
+    public void checkTailPosition() {
+        // checks that the position of the tail is tile 202
         assertEquals(202, game.snake.peek().getTileNum());
+    }
+
+    @Test
+    public void checkScoreIncrease() {
+        // setting the tile in front of the snake head to a fruit
+        game.tiles.put(205, new Fruit(205));
+        // moving the snake 1 tile to the right so it should eat 
+        // the fruit in front of it
+        game.tick(new int[]{1,0});
+        // the score should now equal 1
+        assertEquals(1, game.score);
+    }
+
+    @Test
+    public void checkCrash() {
+        // setting the tile in front of the snake head to a wall
+        game.tiles.put(205, new Wall(205));
+        // moving the snake 1 tile to the right so it should crash 
+        game.tick(new int[]{1,0});
+        // game over variable should be marked to true
+        assertTrue(game.gameOver);
     }
 }
