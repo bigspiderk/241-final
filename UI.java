@@ -227,13 +227,16 @@ class SnakeSegment extends OccupiedTile {
 }
 
 class SnakeHead extends SnakeSegment {
+    // snake head is a segment with a direction arrow
     public SnakeHead(int tileNum) {
         super(tileNum);
+        // initial arrow is to the right
         add(new JLabel(("→")));
     }
 
     public SnakeHead(int tileNum, String directionArrow) {
         super(tileNum);
+        // sets the arrow in the JLabel
         add(new JLabel(directionArrow));
     }
 }
