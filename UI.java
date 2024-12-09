@@ -259,6 +259,7 @@ class Fruit extends Tile {
     }
 }
 
+// class for Wall, ends the game if the user crashes into it
 class Wall extends OccupiedTile {
     public Wall(int tileNum) {
         super(tileNum);
