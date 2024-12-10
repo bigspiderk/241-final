@@ -245,8 +245,8 @@ class SnakeHead extends SnakeSegment {
 class BadFruit extends OccupiedTile {
     public BadFruit(int tileNum) {
         super(tileNum);
-        // Set the background color to Pink
-        setBackground(Color.PINK);
+        // Set the background color to Purple
+        setBackground(new Color(148,0,211));
     }
 }
 
