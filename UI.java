@@ -33,9 +33,6 @@ public class UI {
 
         // Set the default close operation to exit the application
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // make sure the frame cannot be resized
-        frame.setResizable(false);
         
         // Set the layout to a grid
         panel = new JPanel();
