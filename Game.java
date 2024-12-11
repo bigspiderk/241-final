@@ -71,7 +71,7 @@ public class Game {
 
             try {
                 // time to wait in between board updates
-                Thread.sleep(100);
+                Thread.sleep(75);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
